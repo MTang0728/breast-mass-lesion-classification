@@ -5,7 +5,7 @@ Breast cancer is the most commonly diagnosed cancer in women in the United State
 
 For details on the analysis and the findings, please refer the [report](./Resources/Report.pdf)
 
-## Data
+## Data:
 The data used used in this analysis is the [Mammography Mass Data Set](http://archive.ics.uci.edu/ml/datasets/Mammographic+Mass) sourced from the UCI Machine Learning Repository. This dataset contains 961 instances and 6 attributes including the response. There are 445 positive cases and 516 negative cases. The attribute detail is summarized below:
 
 Name | Description | Type | Missing
@@ -15,11 +15,11 @@ Age | Patient age | integer | 5
 Shape | Lesion mass shape, includes round, oval, lobular and irregular | nominal | 31
 Margin | Lesion mass margin, includes circumscribed, microlobulated, obscured, ill-defined and spiculated | Nominal | 48
 Density | Lesion mass density, includes high, iso, low and fat-containing | ordinal | 76
-**Severity** | the response predictor that represents lesion severity, can be either benign or malignant | Binary | 0
+**Severity** | The response predictor that represents lesion severity, can be either benign or malignant | Binary | 0
 
 ## Statistical Methods Used:
 - **Multiple Imputation** for computing missing values
-- **Exploratory Data Analysis (EDA)** for exploring predictors and interactions to be controlled for
+- **Exploratory Data Analysis (EDA)** for exploring the predictors and interactions that need to be controlled for
 - **Logistic Regression** for fitting data
 - **ANOVA & Chi-Square Test** for model and predictor selection
 - **Accuracy, Sensitivity, Specificity, ROC** for evaluating model performance
