@@ -129,33 +129,34 @@ apply(table(data_imp_7[,c("severity_fac","density")])/sum(table(data_imp_7[,c("s
 
 ## check interaction
 # severity and age by birads
-ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
+g1 <- ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
   geom_boxplot() +
   scale_fill_brewer(palette="Blues") +
   labs(title="Severity vs Age by Birads",x="Severity",y="Age") + 
   theme_classic() + theme(legend.position="none") +
   facet_wrap( ~ birads,ncol=3)  ## trend consistent across all levels, no interaction
 # severity and age by shape
-ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
+g2 <- ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
   geom_boxplot() +
   scale_fill_brewer(palette="Blues") +
   labs(title="Severity vs Age by Shape",x="Severity",y="Age") + 
   theme_classic() + theme(legend.position="none") +
   facet_wrap( ~ shape,ncol=2)  ## trend consistent across all levels, no interaction
 # severity and age by margin
-ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
+g3 <- ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
   geom_boxplot() +
   scale_fill_brewer(palette="Blues") +
   labs(title="Severity vs Age by Margin",x="Severity",y="Age") + 
   theme_classic() + theme(legend.position="none") +
   facet_wrap( ~ margin,ncol=3) ## trend consistent across all levels, no interaction
 # severity and age by density
-ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
+g4 <- ggplot(data_imp_7,aes(x=severity_fac, y=age, fill=severity_fac)) +
   geom_boxplot() +
   scale_fill_brewer(palette="Blues") +
   labs(title="Severity vs Age by Density",x="Severity",y="Age") + 
   theme_classic() + theme(legend.position="none") +
   facet_wrap( ~ density,ncol=2) ## trend consistent across all levels, no interaction
+grid.arrange(g1, g2, g3, g4, ncol = 4)
 
 # severity and density by birads
 table(data_imp_7$density, data_imp_7$birads) ## 0 samples in certain combinations
